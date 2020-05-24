@@ -8,6 +8,7 @@ import androidx.core.view.MenuItemCompat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -45,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setShareActionIntent(String s) {
-        final Intent intent = new Intent(Intent.ACTION_SEND);
+        Intent intent = new Intent(Intent.ACTION_SEND);
         intent.setType("text/plain");
         intent.putExtra(Intent.EXTRA_TEXT,s);
+        Log.i("test","run");
         shareActionProvider.setShareIntent(intent);
     }
 }
